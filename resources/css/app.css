@@ -4,4 +4,63 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Your custom styles go here */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.dropdown-list li {
+    position: relative;
+    padding: 10px;
+}
+
+.dot-connector {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.fa-caret-right {
+    transition: transform 0.3s;
+}
+
+.dropdown.open .fa-caret-right {
+    transform: rotate(90deg);
+}
+
+.line-connector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #333;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
