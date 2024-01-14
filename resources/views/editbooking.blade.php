@@ -4,7 +4,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Bookings</title>
+    <title>Edit Bookings</title>
     <!-- Include Chart.js from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,7 +13,6 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
-
 <body class='font-sans bg-blue-100'>
     <div class='header flex items-center justify-between bg-white shadow-lg p-2'>
         <!-- Left Section -->
@@ -37,8 +36,9 @@
             </div>
         </div>
     </div>
-    <div class='flex justify-between'>
-        <aside class="flex flex-col bg-white text-black w-64 h-screen p-4">
+    <div class='container flex justify-between mr-10'>
+      <div class='flex flex-col'>
+      <aside class="flex flex-col bg-white text-black w-64 h-screen p-4">
             <div class='flex justify-center space-x-2 items-center text-white p-2 rounded-xl bg-green-400'>
                 <i class='fa fa-dashboard'></i>
                 <button class="text-2xl font-semibold">Dashboard</button>
@@ -150,65 +150,59 @@
                   <li><a href="#">Add a Booking</a></li>
               </ul>
            </div>
-        </aside>  
-    <div class='container flex flex-col mr-10'>
-    <div class='flex flex-col lg:items-start items-center justify-between lg:flex-row lg:space-x-4 py-10'>
-        <div class='flex items-center justify-between px-4 shadow-xl text-green-400 font-bold text-2xl bg-white lg:w-[360px] lg:h-[100px] w-[500px] h-[150px]'>
-                <div class=''>
-                    <span>236</span>
-                    <h1>Total Bookings</h1>
-                </div>
-                <i class='fa fa-user-plus'></i>
+        </aside>
+      </div>
+      <div class='flex flex-col'>
+           <div class='flex space-x-10 p-4'>
+           <div class='flex flex-col space-y-1 w-[500px]'> 
+           <label class="text-sm font-semibold text-gray-600">Booking ID</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Total Members</label>
+           <input type="number" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Arrival Date</label>
+           <input type="date" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Phone Number</label>
+           <input type="number" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+           </div>
+
+           <div class='flex flex-col space-y-1 w-[500px]'>
+           <label class="text-sm font-semibold text-gray-600">Name</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Date</label>
+           <input type="date" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Departure Date</label>
+           <input type="date" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">File Upload</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+           </div>
+
+           <div class='flex flex-col space-y-1 w-[500px]'>
+           <label class="text-sm font-semibold text-gray-600">Room Type</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+           <select id="selectMultiple" name="selectMultiple" multiple class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200">
+           <option value="item1">Item 1</option>
+           <option value="item2">Item 2</option>
+           <option value="item3">Item 3</option>
+            </select>
+
+           <label class="text-sm font-semibold text-gray-600">Time</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Email ID</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+
+           <label class="text-sm font-semibold text-gray-600">Message</label>
+           <input type="text" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div
-                class='flex items-center justify-between px-4 shadow-xl text-green-400 font-bold text-2xl bg-white lg:w-[360px] lg:h-[100px] w-[500px] h-[150px]'>
-                <div class=''>
-                    <span>236</span>
-                    <h1>Available Rooms</h1>
-                </div>
-                <i class='fa fa-bed'></i>
-            </div>
-            <div
-                class='flex items-center justify-between px-4 shadow-xl text-green-400 font-bold text-2xl bg-white lg:w-[360px] lg:h-[100px] w-[500px] h-[150px]'>
-                <div class=''>
-                    <span>1538</span>
-                    <h1>Enquiries</h1>
-                </div>
-                <i class='fa fa-question-circle'></i>
-            </div>
-            <div
-                class='flex items-center justify-between px-4 shadow-xl text-green-400 font-bold text-2xl bg-white lg:w-[360px] lg:h-[100px] w-[500px] h-[150px]'>
-                <div class=''>
-                    <span>236</span>
-                    <h1>Collections</h1>
-                </div>
-                <i class='fa fa-world'></i>
-            </div>
-         </div> 
-         <div class='container flex justify-between overflow-hidden'>
-         <div class='bg-white w-[600px] h-[400px]'>
-        <canvas id="salesChart" width="800" height="400"></canvas>
-        </div>
-        <div class='bg-white w-[600px] h-[400px]'>
-        <canvas id="salesChart" width="800" height="400"></canvas>
-        </div>
-         </div>
-         <!-- Container with all the bookings -->
-         <div class='bg-white my-10 py-6'>
-            <div class='flex justify-between p-10'>
-                <h1 class='font-bold text-green-400'>Bookings</h1>
-                <button class='bg-green-400 text-white font-bold px-6 py-2 rounded-full'>View All</button>
-            </div>
-            <div class='flex justify-between font-bold px-2'>
-                <h1>Booking ID</h1>
-                <h1>Name</h1>
-                <h1>Email ID</h1>
-                <h1>Room Type</h1>
-                <h1>Room Number</h1>
-                <h1>Status</h1>
-            </div>
-         </div>
-    </div>            
+        </div>  
+        <div class='flex justify-end mr-6 '><button class='bg-green-400 px-4 py-1 rounded-full text-white font-bold'>Save</button></div>      
+      </div>
     </div>
 </body>
 </html>

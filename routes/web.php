@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\EditBookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::view('hello', 'hello');
 Route:: view('about', 'about1 '); # The first about is the url second is the page name
 Route::get('/users/{name}', [Users::class, 'index']);
 Route::get('/form/allbookings', [BookingController::class, 'allbookings']);
+Route::get('/editbooking', [EditBookingController::class, 'editbookings']);
