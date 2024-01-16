@@ -1,10 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomerbookingController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\EditbookingController;
-use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +14,20 @@ use App\Http\Controllers\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view('hello', 'hello');
 
-// Route::get('/about', fu  nction(){
-//     return view('about');
-// });
-#or 
-Route:: view('about', 'about1 '); # The first about is the url second is the page name
-Route::get('/users/{name}', [Users::class, 'index']);
-Route::get('/form/allbookings', [BookingController::class, 'allbookings']);
-Route::get('/editbooking', [EditbookingController::class, 'editbooking']);
-Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/customerbooking', [CustomerbookingController::class,'customerbooking']);
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
