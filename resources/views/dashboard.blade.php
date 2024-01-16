@@ -108,17 +108,11 @@
                         <!-- Actions -->
                         <div class="col-sm-6 col-12 text-sm-end">
                             <div class="mx-n1">
-                                <a href="#" class="btn d-inline-flex btn-sm btn-neutral border-base mx-1 my-4">
-                                    <span class=" pe-2">
-                                        <i class="bi bi-pencil"></i>
-                                    </span>
-                                    <span>Edit</span>
-                                </a>
                                 <a href="#" class="btn d-inline-flex btn-sm btn-outline-success mx-1">
                                     <span class=" pe-2">
                                         <i class="bi bi-plus"></i>
                                     </span>
-                                    <span>Create</span>
+                                    <span>Add Booking</span>
                                 </a>
                                 <a href="#" class="btn d-inline-flex btn-sm btn-success mx-1">
                                     <span class=" pe-2">
@@ -206,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card shadow border-0 mb-7">
+                <div class="card shadow border-5 mb-7">
                     <div class="card-header">
                         <h5 class="mb-0">All Bookings</h5>
                     </div>
@@ -244,6 +238,11 @@
                                             <i class="bg-success"></i>RN50
                                         </span>
                                     </td>
+                                    <td>
+                                        <span class="badge badge-lg badge-dot">
+                                            <i class="bg-success"></i>Confirmed
+                                        </span>
+                                    </td>
                                     <td class="text-end">
                                         <a href="#" class="btn btn-sm btn-neutral">Edit</a>
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
@@ -270,6 +269,11 @@
                                     <td>
                                         <span class="badge badge-lg badge-dot">
                                             <i class="bg-danger"></i>RN51
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-lg badge-dot">
+                                            <i class="bg-danger"></i>Pending
                                         </span>
                                     </td>
                                     <td class="text-end">
