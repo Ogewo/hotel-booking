@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->integer('phone number');
-            $table->string('room type');
-            $table->date('check in date');
-            $table->date('check out date');
+            $table->integer('phonenumber');
+            $table->string('roomtype');
+            $table->date('datein');
+            $table->date('dateout');
             $table->timestamps();
         });
     }

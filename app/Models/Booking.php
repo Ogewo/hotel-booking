@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bookings extends Model
+class Booking extends Model
 {
     use HasFactory;
 
@@ -14,9 +14,9 @@ class Bookings extends Model
     protected $fillable = [
         'name',
         'email',
-        'phone number',
-        'room type',
-        'check in date',
-        'check out date',
+        'phonenumber',
+        'roomtype',
+        'datein',
+        'dateout',
     ];
 }

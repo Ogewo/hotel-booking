@@ -12,61 +12,62 @@
 </head> 
 
 <body class="bg-light">     
-    <div class="flex flex-col items-center justify-center h-screen">
+    <div class="flex flex-col items-center justify-center h-screen font-bold ">
         <h2 class="text-center text-success font-bold text-2xl">Edit Booking</h2>
-        
-        <!-- First Horizontal Div --> 
-        <div class="flex items-center justify-center w-[100rem] mt-2 font-bold">
-            <div class="col-md-4">
-                <div class="bg-success p-3 rounded">
-                    <h5 class='text- mb-1'>Booking Information</h5>
-                    <div class="mb-3 w-full">
-                        <label for="bookingId" class="form-label">Booking ID</label>
-                        <input type="text" class="form-control" id="bookingId" placeholder="Enter Booking ID">
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email ID</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email ID">
-                    </div>
-                </div>
-            </div>
+               
+        <form action="{{ route('updatebooking', ['id' => $booking->id]) }}" method="POST" class='flex flex-col'>
+        @if (session('status'))
+            <div class="alert alert-success">{{ session('status') }}</div>
+        @endif
+    @csrf
+    @method('PUT')
 
-            <!-- Second Horizontal Div -->
-            <div class="col-md-4">
-                <div class="bg-white p-3 rounded">
-                    <h5 class="text-success">Room Information</h5>
-                    <div class="mb-3">
-                        <label for="roomType" class="form-label">Room Type</label>
-                        <select class="form-select" id="roomType">
-                            <option value="single">Single</option>
-                            <option value="double">Double</option>
-                            <option value="suite">Suite</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="roomNumber" class="form-label">Room Number</label>
-                        <input type="text" class="form-control" id="roomNumber" placeholder="Enter Room Number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="status" class="form-label">Status</label>
-                        <select class="form-select" id="status">
-                            <option value="confirmed">Confirmed</option>
-                            <option value="pending">Pending</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-4">
-            <button class="btn btn-success">Save Changes</button>
-        </div>
+    <div class='flex '>
+    <div class='bg-success p-4 my-4 rounded-l-md w-[400px]'>
+        <!-- Booking Information Section -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" value="{{ $booking->name }}">
     </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email ID</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID" value="{{ $booking->email }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="phonenumber" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Enter Your Phone Number" value="{{ $booking->phonenumber }}">
+    </div>
+    </div>
+
+    <div class='border border-red-900 bg-white p-4 my-4 rounded-r-md w-[400px]'>
+        <!-- Room Information Section -->
+    <div class="mb-3">
+        <label for="roomType" class="form-label">Room Type</label>
+        <select class="form-select" id="roomType" name="roomtype">
+            <option value="single" {{ $booking->roomtype === 'single' ? 'selected' : '' }}>Single</option>
+            <option value="double" {{ $booking->roomtype === 'double' ? 'selected' : '' }}>Double</option>
+            <option value="suite" {{ $booking->roomtype === 'suite' ? 'selected' : '' }}>Suite</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="checkInDate" class="form-label">Check-in Date</label>
+        <input type="date" name="datein" class="form-control" id="checkInDate" value="{{ $booking->datein }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="checkOutDate" class="form-label">Check-out Date</label>
+        <input type="date" name="dateout" class="form-control" id="checkOutDate" value="{{ $booking->dateout }}" required>
+    </div>
+    </div>
+    </div>
+
+    <!-- Save Changes Button -->
+    <button type="submit" class="btn btn-success text-green-900 font-bold">Save Changes</button>
+</form>
+
 
     <!-- Bootstrap JS (optional, only if you need JavaScript features) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

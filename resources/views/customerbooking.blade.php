@@ -13,9 +13,13 @@
 
 <div class="container mt-5">
     <h2 class="text-center text-success">Hotel Booking</h2>
+    @if (session('status'))
+        <div class='alert alert-success'>{{session('status')}}</div>
+    @endif
 
-    <!-- Booking Form -->
-    <form>
+    <!-- Booking Form --> 
+    <form action="{{ url('/customerbooking') }}" method='POST'>
+        @csrf
         <!-- Customer Information -->
         <div class="row mt-4">
             <div class="col-md-6">
@@ -23,15 +27,15 @@
                     <h5>Customer Information</h5>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+                        <input type="text" class="form-control" name='name' id="name" placeholder="Enter Your Name" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email ID</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Your Email ID" required>
+                        <input type="email" class="form-control" name='email' id="email" placeholder="Enter Your Email ID" required>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Enter Your Phone Number" required>
+                        <input type="text" class="form-control" name='phonenumber' id="phone" placeholder="Enter Your Phone Number" required>
                     </div>
                 </div>
             </div>
@@ -42,7 +46,7 @@
                     <h5 class="text-success">Room Selection</h5>
                     <div class="mb-3">
                         <label for="roomType" class="form-label">Room Type</label>
-                        <select class="form-select" id="roomType" required>
+                        <select class="form-select" id="roomType" name='roomtype' required>
                             <option value="" selected disabled>Select Room Type</option>
                             <option value="single">Single</option>
                             <option value="double">Double</option>
@@ -51,11 +55,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="checkInDate" class="form-label">Check-in Date</label>
-                        <input type="date" class="form-control" id="checkInDate" required>
+                        <input type="date" name='datein' class="form-control" id="checkInDate" required>
                     </div>
                     <div class="mb-3">
                         <label for="checkOutDate" class="form-label">Check-out Date</label>
-                        <input type="date" class="form-control" id="checkOutDate" required>
+                        <input type="date" name='dateout' class="form-control" id="checkOutDate" required>
                     </div>
                 </div>
             </div>

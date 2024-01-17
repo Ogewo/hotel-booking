@@ -208,90 +208,39 @@
                         <table class="table table-hover table-nowrap">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Booking ID</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email ID</th>
                                     <th scope="col">Room Type</th>
-                                    <th scope="col">Room Number</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Check-in Date</th>
+                                    <th scope="col">Check-Out Date</th>
                                     <th scope="col">Phone Number</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($bookings as $booking)
                                 <tr>
-                                    <td>
-                                        <img alt="" src="" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            FCDTE5
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Ken Mijungu
-                                    </td>
-                                    <td>
-                                        ken.mijingu@gmai.com
-                                    </td>
-                                    <td>
-                                        Twin Room
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success"></i>RN50
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success"></i>Confirmed
-                                        </span>
-                                    </td>
-                                    <td>
-                                            <i class="bg-danger"></i>0768435300
-
-                                        </td>
+                                    <td>{{ $booking->id }}</td>
+                                    <td>{{ $booking->name }}</td>
+                                    <td>{{ $booking->email }}</td>
+                                    <td>{{ $booking->roomtype }}</td>
+                                    <td>{{ $booking->datein }}</td>
+                                    <td>{{ $booking->dateout }}</td>
+                                    <td>0{{ $booking->phonenumber }}</td>
                                     <td class="text-en">
-                                        <a href="#" class="btn btn-sm btn-neutral">Edit</a>
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>                           
-                                <tr>
-                                    <td>
-                                        <img alt="" src="" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            R657EY
-                                        </a>
-                                    </td>
-                                    <td>
-                                        John Kamau
-                                    </td>
-                                    <td>
-                                        johnkamau@gmail.com
-                                    </td>
-                                    <td>
-                                        Suite
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-danger"></i>RN51
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-danger"></i>Pending
-                                        </span>
-                                    </td>
-                                    <td>
-                                            <i class="bg-danger"></i>0768435326
-
-                                        </td>
-                                    <td class="text-en">
-                                        <a href="#" class="btn btn-sm btn-neutral">Edit</a>
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                      <a href="{{ route('editbooking', ['id' => $booking->id]) }}" class="btn btn-sm btn-neutral">Edit</a>
+                                      <form action="{{ route('deletebooking', ['id' => $booking->id]) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-square btn-neutral text-danger-hover" onclick="return confirm('Are you sure you want to delete this booking?')">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </form>
+                                   </td>
+                                </tr> 
+                                @endforeach                          
+                                
                             </tbody>
                         </table>
                     </div>
