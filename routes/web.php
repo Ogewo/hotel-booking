@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerbookingController;
 use App\Http\Controllers\EditbookingController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeleteBookingController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Booking;
 
@@ -22,7 +23,7 @@ use App\Models\Booking;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/home', [HomeController::class, 'index']);
 Route::post('/customerbooking', [CustomerbookingController::class, 'store']);
 Route::get('/admindashboard', [AdminController::class, 'showBookings'])->name('admindashboard');
 Route::get('/editbooking/{id}', [EditbookingController::class, 'editBooking'])->name('editbooking');
@@ -33,7 +34,7 @@ Route::delete('/deletebooking/{id}', [DeleteBookingController::class, 'deleteBoo
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard'); 
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -30,12 +30,7 @@
                 <!-- Dropdown -->
                 <div class="dropdown">
                     <!-- Toggle -->
-                    <a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="avatar-parent-child">
-                            <img alt="Loggein User" src="" class="avatar avatar- rounded-circle">
-                            <span class="avatar-child avatar-badge bg-success"></span>
-                        </div>
-                    </a>
+                    
                     <!-- Menu -->
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
                         <a href="#" class="dropdown-item">Profile</a>
@@ -85,8 +80,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
-                            <i class="bi bi-box-arrow-left"></i> Logout
+                   
+        <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-square"></i>  @auth
+            <form action="{{ route('logout') }}" method="POST" class='flex alignitems-center justify-center'>
+                @csrf
+                <button type="submit" class="text-green-400 underline bg-white font-bold">Logout</button>
+            </form>
+        @endauth
                         </a>
                     </li>
                 </ul>

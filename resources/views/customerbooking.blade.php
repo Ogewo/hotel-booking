@@ -6,10 +6,22 @@
     <title>Hotel Booking</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    @vite('resources/css/style.css')
-  @vite('resources/js/script.js')
+    @vite('resources/css/app.css')
+  @vite('resources/js/app.js')
 </head>
 <body class="bg-light">
+<div class="header flex items-center justify-between px-4">
+<div class="w-[80px] p-1 rounded-full">
+        <img src="{{ asset('images/logo.png') }}" alt="logo">
+    </div>
+        
+        @auth
+            <form action="{{ route('logout') }}" method="POST" class='flex alignitems-center justify-center'>
+                @csrf
+                <button type="submit" class="text-green-400 underline font-bold rounded-xl">Logout</button>
+            </form>
+        @endauth
+    </div>
 
 <div class="container mt-5">
     <h2 class="text-center text-success">Hotel Booking</h2>
@@ -67,7 +79,7 @@
 
         <!-- Submit Button -->
         <div class="text-center mt-4">
-            <button type="submit" class="btn btn-success">Book Now</button>
+            <button type="submit" class="btn btn-success  hover:bg-green-400 hover:text-white text-green-400 font-bold">Book Now</button>
         </div>
     </form>
 </div>
