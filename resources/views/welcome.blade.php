@@ -81,7 +81,7 @@
         <div class="border-l-2 border-gray-500 h-16 mx-4"></div>
         <div class='text-center'>
             <p>Want to experience luxury stay at Crown Inn?</p>
-            <button class='bg-green-400  text-white font-bold rounded-md px-3 py-1'>Book Now<i class='fa fa-arrow-right'></i></button>
+            <a href="{{ url('/customerbooking') }}" class='bg-green-400  text-white font-bold rounded-md px-3 py-1'>Book Now<i class='fa fa-arrow-right'></i></a>
         </div>
        </div>
     </section> 
@@ -96,40 +96,45 @@
                where every moment becomes a memorable experience.</p>
         </div>
     </section> 
-     <section class='bg-white flex items-center justify-center space-x-80 h-[500px]'>
+     <section class='mt-220 bg-white flex items-center justify-center space-x-60 h-[500px]'>
         <div class='flex flex-col'>
             <p class='text-2xl font-bold'>DISCOVER OUR ROOMS</p>
             <h1>Luxury Interior</h1>
-            <div class='flex h-10 mb-20'>
+            <div class='bg-gray-200 space-x-4 rounded-md flex items-center h-[80px] mb-4 mt-10 px-2 py-4'>
                 <div>
-                    <img src="{{asset('images/homeimage.jpeg')}}" class='h-[70px] w-40'/>
+                    <img src="{{asset('images/room_1.jpeg')}}" class='h-[70px] w-[500px]'/>
                 </div>
                 <div>
                     <p>Classic Room</p>
+                    <p>Starting from KSH.3000/Night</p>
+                </div>
+            </div>
+            <div class='bg-gray-100 space-x-4 rounded-md flex items-center h-[80px] mb-4 mt-10 px-2 py-4'>
+                <div>
+                    <img src="{{asset('images/room_2.jpeg')}}" class='h-[70px] w-[500px]'/>
+                </div>
+                <div>
+                    <p>Deluxe Room</p>
                     <p>Starting from KSH.4000/Night</p>
                 </div>
             </div>
-            <div class='flex h-10 mb-20'>
+            <div class='rounded-md space-x-4 flex items-center h-[80px] mb-4 mt-10 px-2 py-4'>
                 <div>
-                    <img src="{{asset('images/homeimage.jpeg')}}" class='h-[70px] w-40'/>
+                    <img src="{{asset('images/double.jpeg')}}" class='h-[70px] w-[500px]'/>
                 </div>
                 <div>
-                    <p>Classic Room</p>
-                    <p>Starting from KSH.4000/Night</p>
-                </div>
-            </div>
-            <div class='flex h-10 mb-20'>
-                <div>
-                    <img src="{{asset('images/homeimage.jpeg')}}" class='h-[70px] w-40'/>
-                </div>
-                <div>
-                    <p>Classic Room</p>
-                    <p>Starting from KSH.4000/Night</p>
+                    <p>Ultra Spacious Room</p>
+                    <p>Starting from KSH.5000/Night</p>
                 </div>
             </div>
         </div>
+        <div class='container bg-cover p-4'>
+            <img src="{{asset('images/room.jpeg')}}" class='h-[450px] w-[700px]'/>
+        </div>
+    </section> 
+    <section class='text-white bg-gray-900 flex items-center justify-center h-[150px]'>
         <div>
-            <!-- <img src="{{asset('images/homeimage.jpeg')}}"/> -->
+        <p>&copy; 2024 Crown Inn. All Rights Reserved.</p>
         </div>
     </section>     
     </div>
