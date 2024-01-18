@@ -96,13 +96,13 @@
                where every moment becomes a memorable experience.</p>
         </div>
     </section> 
-     <section class='mt-220 bg-white flex items-center justify-center space-x-60 h-[500px]'>
-        <div class='flex flex-col'>
+     <section class='mt-0 bg-white flex items-center justify-center space-x-60 h-[500px]'>
+        <div class='flex flex-col w-[500px]'>
             <p class='text-2xl font-bold'>DISCOVER OUR ROOMS</p>
             <h1>Luxury Interior</h1>
             <div class='bg-gray-200 space-x-4 rounded-md flex items-center h-[80px] mb-4 mt-10 px-2 py-4'>
                 <div>
-                    <img src="{{asset('images/room_1.jpeg')}}" class='h-[70px] w-[500px]'/>
+                    <img src="{{asset('images/room_1.jpeg')}}" class='h-[70px] w-[200px]'/>
                 </div>
                 <div>
                     <p>Classic Room</p>
@@ -111,7 +111,7 @@
             </div>
             <div class='bg-gray-100 space-x-4 rounded-md flex items-center h-[80px] mb-4 mt-10 px-2 py-4'>
                 <div>
-                    <img src="{{asset('images/room_2.jpeg')}}" class='h-[70px] w-[500px]'/>
+                    <img src="{{asset('images/room_2.jpeg')}}" class='h-[70px] w-[200px]'/>
                 </div>
                 <div>
                     <p>Deluxe Room</p>
@@ -120,7 +120,7 @@
             </div>
             <div class='rounded-md space-x-4 flex items-center h-[80px] mb-4 mt-10 px-2 py-4'>
                 <div>
-                    <img src="{{asset('images/double.jpeg')}}" class='h-[70px] w-[500px]'/>
+                    <img src="{{asset('images/double.jpeg')}}" class='h-[70px] w-[200px]'/>
                 </div>
                 <div>
                     <p>Ultra Spacious Room</p>
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class='container bg-cover p-4'>
+        <div class='bg-cover p-4'>
             <img src="{{asset('images/room.jpeg')}}" class='h-[450px] w-[700px]'/>
         </div>
     </section> 
