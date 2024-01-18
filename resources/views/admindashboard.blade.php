@@ -36,8 +36,8 @@
                         <a href="#" class="dropdown-item">Profile</a>
                         <a href="#" class="dropdown-item">Settings</a>
                         <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">Logout</a>
-                    </div>
+                        <a href="#" class="dropdown-item">Logout</a> 
+                       2                    </div>
                 </div>
             </div>
             <!-- Collapse -->
