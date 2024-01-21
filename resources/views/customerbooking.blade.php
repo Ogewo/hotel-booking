@@ -14,7 +14,7 @@
 <div class="w-[80px] p-1 rounded-full">
         <img src="{{ asset('images/logo.png') }}" alt="logo">
     </div>
-        
+        <a>Reservation</a>
         @auth
             <form action="{{ route('logout') }}" method="POST" class='flex alignitems-center justify-center'>
                 @csrf

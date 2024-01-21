@@ -17,17 +17,20 @@
 
 <body class="bg-gray-100">
     <!-- Header Section -->
-    <header class='flex text-green-400 space-x-0 justify-between items-center text-[15px] font-bold bg-white py-4 px-10'>
-       <ul class='flex space-x-10'>
+    <header class='flex text-green-400 space-x-0 justify-between items-center text-[15px] font-bold bg-white py-4 px-5'>
+        <div>
+        <img src="{{asset('images/logo.png')}}" class='h-[40px] my-4'/>
+        </div>
+       <div  class='navlinks md:static absolute bg-white min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5'>
+       <ul class='flex md:gap-4 md:flex-row flex-col md:items-center gap-4 sm:mb-0 mb-2'>
         <li><a href=''>Home</a></li>
         <li><a href=''>About Us</a></li>
         <li><a href=''>Our Rooms</a></li>
         <li><a href=''>Reservation</a></li>
         <li><a href=''>Contact</a></li>
-       </ul>
-       <img src="{{asset('images/logo.png')}}" class='w-20'/>
-
-       <div class='space-x-4'>
+       </ul>       
+       </div>
+      <div class='flex items-center gap-4'>
        @if (Route::has('login'))
                     @auth
                         <a href="{{ route('public.home') }}"
@@ -47,6 +50,7 @@
                         @endif
                     @endauth
                 @endif
+                <ion-icon onclick="onToggleMenu(this)" name='menu' class='text-2xl cursor-pointer md:hidden'></ion-icon>
        </div>
     </header>   
 
@@ -59,7 +63,7 @@
        <p>A place to experience and enjoy life</p>
        </div>
        
-       <div class='container flex  items-center justify-center bg-white h-[200px] w-[900px] py-6'>
+       <div class='container flex flex-col md:flex-row md:w-[900px] md:h-[200px] items-center justify-center bg-white h-[400px] w-full py-6'>
         <div>
             <h1 class='font-bold'>ROOM TYPES</h1>
             <p>Deluxe Rooms</p>
@@ -85,13 +89,13 @@
         </div>
        </div>
     </section>    
-    <section class=' h-[500px]'>
-        <h1 class='text-center mt-6'>LITTLE ABOUT US</h1>
-        <div class='flex space-x-40 justify-center pt-[70px]'>
+    <section class=' h-[500px] my-[20px] pb-0 text-center md:text-left'>
+        <h1 class='text-center md:mt-6 text-2xl font-semibold md:text-[15px]'>LITTLE ABOUT US</h1>
+        <div class='md:flex md:px-0 px-4 md:space-x-40 justify-center  pt-[70px]'>
         <div>
-            <img src="{{asset('images/homeimage.jpeg')}}" class='h-80'/>
+            <img src="{{asset('images/homeimage.jpeg')}}" class='md:h-80'/>
         </div>
-        <div class='flex flex-col w-[450px] space-y-8'>
+        <div class='flex flex-col md:w-[450px] w-full space-y-8'>
             <hr class='w-10 border border-gray-700'/>
             <h1 class='text-6xl font-bold'>A best place to enjoy your life</h1>
             <p class='text-gray-500 text-1xl'>Discover comfort and luxury at our exquisite hotel. Indulge in a world of relaxation and sophistication,
@@ -99,7 +103,7 @@
         </div>
         </div>
     </section> 
-     <section class='mt-0 bg-white flex items-center justify-center space-x-20 h-[500px]'>
+     <section class='md:justify-center h-full md:pt-10 pt-80 bg-white md:flex-row flex flex-col items-center text-center md:space-x-20 border md:h-[500px]'>
         <div class='flex flex-col w-[400px]'>
             <p class='text-2xl font-bold'>DISCOVER OUR ROOMS</p>
             <h1>Luxury Interior</h1>
@@ -134,13 +138,26 @@
                 
             </div>
         </div>
-        <div class='bg-cover p-4'>
+        <div class='p-4'>
             <img src="{{asset('images/room.jpeg')}}" class='h-[450px] w-[800px]'/>
         </div>
     </section> 
-    <section class=''>
-        <div>
-            
+    <section class='flex flex-col md:flex-row justify-center  px-10 items-center py-4 md:py-20'>
+        <div class='w-[100%] bg-cover border h-[500px]' style="background-image: url('{{ asset('images/landingimage.jpg') }}');opacity:;">
+          
+        </div>
+        <div class='flex flex-col text-center md:text-left items-center md:w-1/2 space-y-10'>
+            <div class='space-y-2 font-bold'>
+            <p class='text-gray-400 font-bold'>INFORMATION</p>
+            <h1 class='text-2xl font-bold'>Contact Us</h1>
+            <p >Nairobi, <span class='text-gray-400'>Kenya</span></p>
+            <h1 class='text-gray-400'>269 Moi Avenue, Ultra Bulding</h1>
+            <p class='text-gray-400'><span class='text-gray-900'>Email:</span>info@crowninn.com</p>
+            <div>
+                <p class='text-gray-400'>Call Directly:</p>
+                <h1 class='text-2xl text-gray-900'>+254 712 345 678</h1>
+            </div>
+            </div>
         </div>
     </section> 
     <section class='text-white bg-gray-900 flex items-center justify-center h-[150px]'>
@@ -149,6 +166,14 @@
         </div>
     </section>     
     </div>
+    <script>
+        const navLinks = document.querySelector('.navlinks')
+        function onToggleMenu(e){
+                e.name = e.name === 'menu' ? 'close' : 'menu'
+                navLinks.classList.toggle('top-[9%]')}
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
